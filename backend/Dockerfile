@@ -23,10 +23,10 @@ WORKDIR /app
 
 COPY project_farm_api .
 
-RUN npm install
+RUN npm install -g typescript
+RUN npm install -g ts-node
 RUN npm install -g pm2
-RUN ls
-RUN pm2 install typescript
+RUN npm install
 RUN pm2 start ./src/server.ts
 
 EXPOSE 3035
