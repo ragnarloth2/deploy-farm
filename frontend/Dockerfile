@@ -21,6 +21,7 @@ COPY httpd.conf /etc/httpd/conf/
 COPY .htaccess /var/www/html/fazenda/
 # COPY sites-enabled /etc/httpd/conf.d/
 EXPOSE 80
-ADD run-httpd.sh /run-httpd.sh
+COPY run-httpd.sh /
+#ADD run-httpd.sh /run-httpd.sh
 RUN chmod -v +x /run-httpd.sh
 CMD ["/run-httpd.sh"]
