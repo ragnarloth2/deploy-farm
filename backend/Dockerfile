@@ -13,7 +13,7 @@ VOLUME [ "/sys/fs/cgroup" ]
 CMD ["/usr/sbin/init"]
 
 
-RUN curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash - && yum update && yum install nodejs
+RUN curl -sL https://rpm.nodesource.com/setup_10.x | bash - && yum update && yum install nodejs
 
 WORKDIR /app
 
