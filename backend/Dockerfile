@@ -74,7 +74,7 @@ WORKDIR /usr/local/bin/
 # Bundle app source
 COPY project_farm_api .
 
-RUN npm install
+RUN yarn
 
 EXPOSE 3035
-CMD [ "node", "./src/server.js" ]
+CMD [ "node ./src/server.js" ]
