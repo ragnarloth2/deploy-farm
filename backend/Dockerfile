@@ -4,7 +4,7 @@ FROM node:16
 WORKDIR /usr/src/app
 
 # Bundle app source
-COPY project_farm_api /
+COPY project_farm_api .
 
 #RUN cd /project_farm_api && npm install
 # If you are building your code for production
