@@ -2,7 +2,8 @@ FROM node
 
 COPY project_farm_api .
 
+RUN npm install -g nodemon
 RUN yarn
 
 EXPOSE 3035
-CMD [ "node ./src/server.js" ]
+CMD [ "npm run dev" ]
