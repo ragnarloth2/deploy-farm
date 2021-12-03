@@ -18,7 +18,7 @@ RUN yum -y update && yum -y install nano unzip
 #RUN unzip /app/dists.zip -d /var/www/html/
 RUN rm /etc/httpd/conf/httpd.conf
 COPY httpd.conf /etc/httpd/conf/
-COPY fazenda /var/www/html
+COPY fazenda /var/www/html/fazenda
 COPY .htaccess /var/www/html/fazenda/
 COPY fazenda.conf /etc/httpd/conf.d/
 EXPOSE 80
