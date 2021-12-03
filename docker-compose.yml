@@ -2,10 +2,8 @@ version: "3.7"
 services:
     frontend:
       build: './frontend'
-      container_name: "frontend"
+      container_name: "farm-frontend"
       ports:
           - "80:80"
-      depends_on:
-          - application
       environment:
         TZ: "America/Sao_Paulo"

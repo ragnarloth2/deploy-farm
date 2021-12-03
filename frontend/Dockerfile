@@ -14,15 +14,13 @@ CMD ["/usr/sbin/init"]
 RUN yum -y update && yum clean all
 RUN yum -y install httpd && yum -y install git && yum clean all
 RUN mkdir -p /var/www/html
-# RUN yum -y update && yum -y install nano unzip
-# COPY . /app
-# RUN unzip /app/dists.zip -d /var/www/html/
-# RUN rm /etc/httpd/conf/httpd.conf
-# RUN cp /app/httpd.conf /etc/httpd/conf/
-# RUN cp /app/.htaccess /var/www/html/register/
-# RUN cp /app/.htaccess /var/www/html/manager/
-# RUN cp -r /app/sites-enabled/* /etc/httpd/conf.d/
-# EXPOSE 80
-# ADD run-httpd.sh /run-httpd.sh
-# RUN chmod -v +x /run-httpd.sh
-# CMD ["/run-httpd.sh"]
+RUN yum -y update && yum -y install nano unzip
+RUN unzip /app/dists.zip -d /var/www/html/
+RUN rm /etc/httpd/conf/httpd.conf
+COPY httpd.conf /etc/httpd/conf/
+COPY .htaccess /var/www/html/fazenda/
+COPY sites-enabled/* /etc/httpd/conf.d/
+EXPOSE 80
+ADD run-httpd.sh /run-httpd.sh
+RUN chmod -v +x /run-httpd.sh
+CMD ["/run-httpd.sh"]
