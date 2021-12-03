@@ -14,6 +14,10 @@ CMD ["/usr/sbin/init"]
 
 
 RUN curl -sL https://rpm.nodesource.com/setup_16.x | bash -
+RUN yum update
+RUN yum install nodejs
+
+RUN node --version
 
 WORKDIR /app
 
