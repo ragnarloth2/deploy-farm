@@ -65,7 +65,8 @@ RUN set -ex \
   && yarn --version
 
 COPY docker-entrypoint.sh /usr/local/bin/
-ENTRYPOINT ["../../docker-entrypoint.sh"]
+COPY docker-entrypoint.sh /usr/local/bin/project_farm_api/src
+ENTRYPOINT ["docker-entrypoint.sh"]
 
 # Create app directory
 WORKDIR /usr/local/bin/
