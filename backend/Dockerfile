@@ -25,7 +25,7 @@ COPY project_farm_api .
 
 RUN npm install -g nodemon
 RUN npm install
-RUN npm run dev
+CMD npm run dev
 
 EXPOSE 3035
 CMD ["/run-httpd.sh"]
