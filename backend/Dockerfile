@@ -26,7 +26,7 @@ COPY project_farm_api .
 RUN npm install
 RUN npm install -g pm2
 RUN ls
-RUN ./node_modules/.bin/pm2 install typescript
+RUN pm2 install typescript
 RUN pm2 start ./src/server.ts
 
 EXPOSE 3035
