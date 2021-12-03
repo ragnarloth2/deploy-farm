@@ -15,7 +15,7 @@ RUN yum -y update && yum clean all
 RUN yum -y install httpd && yum -y install git && yum clean all
 RUN mkdir -p /var/www/html
 RUN yum -y update && yum -y install nano unzip
-RUN unzip /app/dists.zip -d /var/www/html/
+#RUN unzip /app/dists.zip -d /var/www/html/
 RUN rm /etc/httpd/conf/httpd.conf
 COPY httpd.conf /etc/httpd/conf/
 COPY .htaccess /var/www/html/fazenda/
