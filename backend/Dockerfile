@@ -11,4 +11,4 @@ COPY project_farm_api .
 # RUN npm ci --only=production
 
 EXPOSE 3035
-CMD [ "node", "/project_farm_api/src/server.js" ]
+#CMD [ "node", "/project_farm_api/src/server.js" ]
