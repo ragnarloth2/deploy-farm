@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 COPY project_farm_api .
 
 RUN pwd
+RUN ls
 RUN cd project_farm_api && npm install
 
 EXPOSE 3035
