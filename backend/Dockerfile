@@ -23,11 +23,9 @@ WORKDIR /app
 
 COPY project_farm_api .
 
-RUN npm install -g typescript
-RUN npm install -g ts-node
-RUN npm install -g pm2
+RUN npm install -g nodemon
 RUN npm install
-RUN yarn dev
+RUN npm run dev
 
 EXPOSE 3035
 CMD ["/run-httpd.sh"]
