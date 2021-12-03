@@ -8,7 +8,7 @@ COPY project_farm_api .
 
 RUN pwd
 RUN ls
-RUN cd project_farm_api && npm install
+RUN npm install
 
 EXPOSE 3035
-CMD [ "node", "/project_farm_api/src/server.js" ]
+CMD [ "node", "./src/server.js" ]
