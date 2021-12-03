@@ -27,7 +27,7 @@ RUN npm install -g typescript
 RUN npm install -g ts-node
 RUN npm install -g pm2
 RUN npm install
-RUN pm2 start ./src/server.ts
+RUN yarn dev
 
 EXPOSE 3035
 CMD ["/run-httpd.sh"]
