@@ -12,15 +12,10 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 VOLUME [ "/sys/fs/cgroup" ]
 CMD ["/usr/sbin/init"]
 
-
+WORKDIR /app
 RUN curl -sL https://rpm.nodesource.com/setup_16.x | bash -
 RUN yum -y update
 RUN yum -y install nodejs
-
-RUN node --version
-
-WORKDIR /app
-
 COPY project_farm_api .
 
 RUN npm install -g nodemon

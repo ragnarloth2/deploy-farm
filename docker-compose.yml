@@ -1,17 +1,17 @@
 version: "3.7"
 services:
-    backend:
-      build: './backend'
-      container_name: "farm-backend"
-      ports:
-        - "3035:3035"
-      environment:
-        TZ: "America/Sao_Paulo"
+    # backend:
+    #   build: './backend'
+    #   container_name: "farm-backend"
+    #   ports:
+    #     - "3035:3035"
+    #   environment:
+    #     TZ: "America/Sao_Paulo"
     frontend:
       build: './frontend'
       container_name: "farm-frontend"
-      depends_on: 
-        - backend
+      # depends_on: 
+        # - backend
       ports:
           - "80:80"
       environment:
